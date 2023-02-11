@@ -1,10 +1,11 @@
 package com.cecis.practicaJPA.model;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.sql.Date;
+import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Getter @Setter
@@ -17,14 +18,15 @@ public class Curso {
     private Long id_curso;
     private String nombre;
     private String modalidad;
-    private Date fecha_finalizacion;
+    @JsonFormat(pattern="dd/MM/yyy")
+    private LocalDate fecha_finalizacion;
     @OneToMany
     private List<Tema> listaDeTemas;
 
     public Curso() { }
 
     public Curso(Long id_curso, String nombre, String modalidad,
-                 Date fecha_finalizacion, List<Tema> listaDeTemas) {
+                 LocalDate fecha_finalizacion, List<Tema> listaDeTemas) {
         this.id_curso = id_curso;
         this.nombre = nombre;
         this.modalidad = modalidad;
