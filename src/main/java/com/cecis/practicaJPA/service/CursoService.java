@@ -5,6 +5,7 @@ import com.cecis.practicaJPA.repository.ICursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -34,7 +35,19 @@ public class CursoService implements ICursoService {
     }
 
     @Override
-    public Curso findCurso(Long id) {
+    public Curso findCursoById(Long id) {
         return cursoRep.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Curso> findCursoByName(String name) {
+        List<Curso> listaCursos = cursoRep.findAll();
+        List<Curso> foundList = new ArrayList<>();
+
+        for (Curso curso : listaCursos) {
+            if(curso.getNombre().toUpperCase().contains(name.toUpperCase())) foundList.add(curso);
+        }
+
+        return foundList;
     }
 }

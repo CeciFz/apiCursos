@@ -19,11 +19,6 @@ public class CursoController {
         return cursoServ.getCursos();
     }
 
-    @GetMapping("/cursos/getTemas/{id_curso}")
-    public List<Tema> getTemas(@PathVariable Long id_curso) {
-        return cursoServ.findCurso(id_curso).getListaDeTemas();
-    }
-
     @PostMapping("/cursos/add")
     public String saveCurso(@RequestBody Curso curso) {
         cursoServ.saveCurso(curso);
@@ -33,12 +28,24 @@ public class CursoController {
     @PutMapping("/cursos/edit")
     public Curso editCurso(@RequestBody Curso curso) {
         cursoServ.editCurso(curso);
-        return cursoServ.findCurso(curso.getId_curso());
+        return cursoServ.findCursoById(curso.getId_curso());
     }
 
     @DeleteMapping("/cursos/delete/{id_curso}")
     public String deleteCurso(@PathVariable Long id_curso) {
         cursoServ.deleteCurso(id_curso);
         return "El curso se ha eliminado de la BD";
+    }
+
+
+    @GetMapping("/cursos/getTemas/{id_curso}")
+    public List<Tema> getTemas(@PathVariable Long id_curso) {
+        return cursoServ.findCursoById(id_curso).getListaDeTemas();
+    }
+
+
+    @GetMapping("/cursos/findCurso")
+    public List<Curso> findCursoByName(@RequestParam String name) {
+        return cursoServ.findCursoByName(name);
     }
 }
