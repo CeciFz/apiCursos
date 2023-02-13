@@ -1,8 +1,8 @@
-package com.cecis.practicaJPA.controller;
+package com.cecis.apiCursos.controller;
 
-import com.cecis.practicaJPA.model.Curso;
-import com.cecis.practicaJPA.model.Tema;
-import com.cecis.practicaJPA.service.ICursoService;
+import com.cecis.apiCursos.model.Curso;
+import com.cecis.apiCursos.model.Tema;
+import com.cecis.apiCursos.service.ICursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,8 +11,12 @@ import java.util.List;
 @RestController
 public class CursoController {
 
-    @Autowired
     private ICursoService cursoServ;
+
+    @Autowired
+    public CursoController(ICursoService cursoServ) {
+        this.cursoServ = cursoServ;
+    }
 
     @GetMapping("/cursos/getAll")
     public List<Curso> getCursos() {

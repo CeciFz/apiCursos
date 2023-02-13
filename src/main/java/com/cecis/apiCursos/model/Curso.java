@@ -1,4 +1,4 @@
-package com.cecis.practicaJPA.model;
+package com.cecis.apiCursos.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
@@ -13,8 +13,8 @@ import java.util.List;
 public class Curso {
 
     @Id
-    @GeneratedValue(generator = "sequenciaCurso")
     @SequenceGenerator(name="sequenciaCurso",sequenceName="DB_SEQUENCIA_CURSO", allocationSize=1)
+    @GeneratedValue(generator = "sequenciaCurso")
     private Long id_curso;
     private String nombre;
     private String modalidad;

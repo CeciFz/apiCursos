@@ -1,10 +1,10 @@
-package com.cecis.practicaJPA;
+package com.cecis.apiCursos;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PracticaJPAApplicationTests {
+class apiCursosApplicationTests {
 
     @Test
     void contextLoads() {

@@ -1,7 +1,7 @@
-package com.cecis.practicaJPA.service;
+package com.cecis.apiCursos.service;
 
-import com.cecis.practicaJPA.model.Tema;
-import com.cecis.practicaJPA.repository.ITemaRepository;
+import com.cecis.apiCursos.model.Tema;
+import com.cecis.apiCursos.repository.ITemaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,8 +10,12 @@ import java.util.List;
 @Service
 public class TemaService implements ITemaService {
 
-    @Autowired
     private ITemaRepository temaRepo;
+
+    @Autowired
+    public TemaService(ITemaRepository temaRepo){
+        this.temaRepo = temaRepo;
+    }
 
     @Override
     public List<Tema> getTemas() {

@@ -1,7 +1,7 @@
-package com.cecis.practicaJPA.controller;
+package com.cecis.apiCursos.controller;
 
-import com.cecis.practicaJPA.model.Tema;
-import com.cecis.practicaJPA.service.ITemaService;
+import com.cecis.apiCursos.model.Tema;
+import com.cecis.apiCursos.service.ITemaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,8 +10,12 @@ import java.util.List;
 @RestController
 public class TemaController {
 
-    @Autowired
     private ITemaService temaServ;
+
+    @Autowired
+    public TemaController(ITemaService temaServ){
+        this.temaServ = temaServ;
+    }
 
     @GetMapping("/temas/getAll")
     public List<Tema> getTemas() {

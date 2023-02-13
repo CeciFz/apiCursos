@@ -1,4 +1,4 @@
-package com.cecis.practicaJPA.model;
+package com.cecis.apiCursos.model;
 
 import javax.persistence.*;
 import lombok.Getter;
@@ -9,8 +9,8 @@ import lombok.Setter;
 public class Tema {
 
     @Id
-    @GeneratedValue(generator = "sequenciaTema")
     @SequenceGenerator(name="sequenciaTema",sequenceName="DB_SEQUENCIA_TEMA", allocationSize=1)
+    @GeneratedValue(generator = "sequenciaTema")
     private Long id_tema;
     private String nombre;
     private String descripcion;

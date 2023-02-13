@@ -1,13 +1,13 @@
-package com.cecis.practicaJPA;
+package com.cecis.apiCursos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PracticaJPAApplication {
+public class apiCursosApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PracticaJPAApplication.class, args);
+        SpringApplication.run(apiCursosApplication.class, args);
     }
 
 }

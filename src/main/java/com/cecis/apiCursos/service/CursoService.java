@@ -1,7 +1,7 @@
-package com.cecis.practicaJPA.service;
+package com.cecis.apiCursos.service;
 
-import com.cecis.practicaJPA.model.Curso;
-import com.cecis.practicaJPA.repository.ICursoRepository;
+import com.cecis.apiCursos.model.Curso;
+import com.cecis.apiCursos.repository.ICursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,8 +11,12 @@ import java.util.List;
 @Service
 public class CursoService implements ICursoService {
 
-    @Autowired
     private ICursoRepository cursoRep;
+
+    @Autowired
+    public CursoService(ICursoRepository cursoRep){
+        this.cursoRep = cursoRep;
+    }
 
     @Override
     public List<Curso> getCursos() {

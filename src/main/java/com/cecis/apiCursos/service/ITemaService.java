@@ -1,6 +1,6 @@
-package com.cecis.practicaJPA.service;
+package com.cecis.apiCursos.service;
 
-import com.cecis.practicaJPA.model.Tema;
+import com.cecis.apiCursos.model.Tema;
 
 import java.util.List;
 

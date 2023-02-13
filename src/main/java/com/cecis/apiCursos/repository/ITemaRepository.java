@@ -1,6 +1,6 @@
-package com.cecis.practicaJPA.repository;
+package com.cecis.apiCursos.repository;
 
-import com.cecis.practicaJPA.model.Tema;
+import com.cecis.apiCursos.model.Tema;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

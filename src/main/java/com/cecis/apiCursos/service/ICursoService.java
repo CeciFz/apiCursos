@@ -1,5 +1,5 @@
-package com.cecis.practicaJPA.service;
-import com.cecis.practicaJPA.model.Curso;
+package com.cecis.apiCursos.service;
+import com.cecis.apiCursos.model.Curso;
 import java.util.List;
 
 public interface ICursoService {
